@@ -3,7 +3,9 @@
   "author": "jden <jason@denizac.org>",
   "version": "0.1.0",
   "description": "a split key/value store: stash values in one store and keys in another",
-  "keywords": [""],
+  "keywords": [
+    ""
+  ],
   "main": "index.js",
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha"
@@ -14,5 +16,20 @@
   "devDependencies": {
     "chai": "~1.6.0",
     "mocha": "~1.9.0"
+  },
+  "dependencies": {
+    "cookie": "~0.1.0",
+    "ncall": "~0.1.0",
+    "bluebird": "~0.11.6-0"
+  },
+  "jshintConfig": {
+    "curly": true,
+    "quotmark": "single",
+    "unused": true,
+    "undef": true,
+    "asi": true,
+    "node": true,
+    "strict": false,
+    "esnext": true
   }
 }

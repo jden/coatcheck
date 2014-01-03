@@ -45,7 +45,6 @@ module.exports = function (serviceStore, config) {
     if (!(this instanceof Check)) {
       return new Check(key, req, res)
     }
-    console.log('key:', key)
     this.key = hash(TOKEN_PREFIX + ':' + key)
 
     this.req = req
@@ -60,7 +59,7 @@ module.exports = function (serviceStore, config) {
     var key = this.key
 
     var token = this.getVerifiedTokenFromCookie()
-    console.log('coatcheck get', key, token)
+    // console.log('coatcheck get', key, token)
     if (!token) {
       return Promise.resolve()
     }
@@ -99,7 +98,6 @@ module.exports = function (serviceStore, config) {
   proto.getVerifiedTokenFromCookie = function () {
     var cookies = cookie.parse(this.req.headers.cookie || '')
     var token = cookies[this.key]
-    console.log('rawtoken', this.key, token)
     if (!verify(token)) {
       return false
     }
